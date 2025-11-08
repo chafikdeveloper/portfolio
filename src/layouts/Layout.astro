@@ -1,69 +1,110 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
+import "@/styles/starwind.css";
+
+const year = new Date().getFullYear();
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<header class="flex items-center justify-between py-4 px-6 sm:px-12 md:px-16 rounded-full my-4 sm:my-6 md:my-8 mx-4 sm:mx-8 md:mx-32 relative">
-            <h1 class="font-bold text-2xl text-black cursor-pointer">
-                Chafik
-                <span class="text-blue-800">Dev</span>
-            </h1>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Chafik Chegma | Portfolio</title>
+  </head>
+  <body>
+    <header
+      class="flex items-center justify-between py-4 px-6 sm:px-12 md:px-16 rounded-full my-4 sm:my-6 md:my-8 mx-4 sm:mx-8 md:mx-32 relative"
+    >
+      <h1 class="font-bold text-2xl text-black cursor-pointer">
+        Chafik
+        <span class="text-blue-800">Dev</span>
+      </h1>
 
-            <!-- Hamburger menu icon -->
-            <button id="menu-btn" class="block md:hidden text-black cursor-pointer z-50">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
-            </button>
+      <!-- Hamburger menu icon -->
+      <button
+        id="menu-btn"
+        class="block md:hidden text-black cursor-pointer z-50"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-menu-icon lucide-menu"
+          ><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"
+          ></path></svg
+        >
+      </button>
 
-            <nav id="menu" class="hidden md:block absolute top-16 right-6 rounded-lg shadow-lg md:static md:shadow-none px-8 md:px-0 transition-all duration-300 ease-in-out">
-                <ul class="flex flex-col md:flex-row md:items-center gap-4 p-4 md:p-0">
-                    <li class="text-blue-500 font-bold border-b-2 pb-0.5">
-                        <a href="#">Home</a>
-                    </li>
-                    <li class="hover:text-blue-600">
-                        <a href="#">About</a>
-                    </li>
-                    <li class="hover:text-blue-600">
-                        <a href="#">Projects</a>
-                    </li>
-                    <li class="hover:text-blue-600">
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+      <nav
+        id="menu"
+        class="hidden md:block absolute top-16 right-6 rounded-lg shadow-lg md:static md:shadow-none px-8 md:px-0 transition-all duration-300 ease-in-out"
+      >
+        <ul class="flex flex-col md:flex-row md:items-center gap-4 p-4 md:p-0">
+          <li class="text-blue-500 font-bold border-b-2 border-blue-500 pb-0.5">
+            <a href="#">Home</a>
+          </li>
+          <li class="hover:text-blue-600">
+            <a href="#">About</a>
+          </li>
+          <li class="hover:text-blue-600">
+            <a href="#">Projects</a>
+          </li>
+          <li class="hover:text-blue-600">
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-        <main class="px-8 py-4 mx-auto">
-            <slot />
-        </main>
-	</body>
+    <main class="flex flex-col justify-center px-8 py-4 mx-auto">
+      <slot />
+    </main>
+
+    <footer class="bg-black py-4 px-8 text-white">
+      <div
+        class="flex flex-col md:flex-row items-center md:justify-between mb-4"
+      >
+        <div>
+          <h1 class="font-bold text-2xl text-white cursor-pointer">
+            Chafik
+            <span class="text-blue-800">Dev</span>
+          </h1>
+        </div>
+        
+      <div class="text-center text-white text-sm mt-2">
+        &copy; {year} all rights are reserved
+      </div>
+      </div>
+    </footer>
+  </body>
 </html>
 
 <script is:inline>
-    const menuBtn = document.getElementById('menu-btn');
-    const menu = document.getElementById('menu');
+  const menuBtn = document.getElementById("menu-btn");
+  const menu = document.getElementById("menu");
 
-    menuBtn?.addEventListener('click', (e) => {
-        e.stopPropagation();
-        menu?.classList.toggle('hidden');
-    });
+  menuBtn?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    menu?.classList.toggle("hidden");
+  });
 
-    document.addEventListener('click', (e) => {
-        if (!menu?.classList.contains('hidden')) {
-            // const target = e.target as Node;
-            const isClickInsideMenu = menu?.contains(e.target);
-            const isClickOnButton = menuBtn?.contains(e.target);
+  document.addEventListener("click", (e) => {
+    if (!menu?.classList.contains("hidden")) {
+      // const target = e.target as Node;
+      const isClickInsideMenu = menu?.contains(e.target);
+      const isClickOnButton = menuBtn?.contains(e.target);
 
-            if (!isClickInsideMenu && !isClickOnButton) {
-                menu?.classList.add('hidden');
-            }
-        }
-    });
+      if (!isClickInsideMenu && !isClickOnButton) {
+        menu?.classList.add("hidden");
+      }
+    }
+  });
 </script>
