@@ -30,14 +30,15 @@ const phone = import.meta.env.PHONE;
       <Card class="flex flex-col pt-4">
         <CardContent class="space-y-4">
           <Label for="email">Email</Label>
-          <Input id="email" placeholder="type your email" class="mt-2" />
+          <Input id="email" name="email" placeholder="type your email" class="mt-2" />
 
           <Label for="name">Name</Label>
-          <Input id="name" placeholder="enter your name" class="mt-2" />
+          <Input id="name" name="name" placeholder="enter your name" class="mt-2" />
 
           <Label for="message">Message</Label>
           <Textarea
             id="message"
+            name="message"
             placeholder="write your message.."
             class="mt-2"
           />
