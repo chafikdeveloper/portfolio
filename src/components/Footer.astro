@@ -1,0 +1,22 @@
+---
+
+---
+
+<footer class="bg-black py-4 px-8 text-white">
+  <div class="flex flex-col md:flex-row items-center md:justify-between mb-4">
+    <div>
+      <h1 class="font-bold text-2xl text-white cursor-pointer">
+        Chafik
+        <span class="text-blue-800">Dev</span>
+      </h1>
+    </div>
+
+    <div class="text-center text-white text-sm mt-2">
+      Copyright &copy; <span id="copyright"></span>, all rights reserved
+    </div>
+  </div>
+</footer>
+
+<script is:inline>
+    document.getElementById('copyright').textContent = new Date().getFullYear().toString();
+</script>
