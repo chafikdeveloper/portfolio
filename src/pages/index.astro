@@ -1,18 +1,41 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import LogoWall from '../components/LogoWall.astro';
-import Contact from '../components/Contact.astro';
-import Testimonial from '@/components/Testimonial.astro';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import LogoWall from "../components/LogoWall.astro";
+import Contact from "../components/Contact.astro";
+import Testimonial from "@/components/Testimonial.astro";
+import { getCollection } from "astro:content";
+import ProjectCard from "@/components/ProjectCard.astro";
 
+const projects = await getCollection("projects");
+
+const filteredProjects = projects.slice(0, 3);
+console.log("🚀 ~ filteredProjects:", filteredProjects);
 ---
 
 <Layout>
-	<Hero />
+  <Hero />
 
-	<LogoWall />
+  <LogoWall />
 
-	<Contact />
+  <div class="md:mt-20">
+    <h2 class="text-center font-bold text-3xl">Projects</h2>
+    <p class="text-center text-md mt-4">View some of previous work</p>
 
-	<Testimonial />
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+      {filteredProjects.map((project) => <ProjectCard project={project} />)}
+    </div>
+
+    <a href="/project" class="flex justify-center mt-10"
+      ><button class="px-4 py-2 rounded-md text-white bg-black"
+        >View all projects</button
+      ></a
+    >
+  </div>
+
+  <h2 class="text-center font-bold text-3xl mt-8 md:mt-20">Contact</h2>
+
+  <Contact />
+
+  <Testimonial />
 </Layout>
