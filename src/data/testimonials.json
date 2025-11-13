@@ -7,6 +7,12 @@
     },
     {
         "id": 2,
+        "name": "Moussa Bayou",
+        "role": "Full-stack developer",
+        "message": "You've been a highly proactive member of our team. I cannot recall the many things I've adopted from you, and the many times we've collaborated on projects that ended up a success. Great pleasure to have worked with you, and I wish you the best with your career!"
+    },
+    {
+        "id": 3,
         "name": "Ilyes Mekbal",
         "role": "Full-stack developer",
         "message": "Chafik was a great colleague, he was always helpful to me and to the rest of the team, always recommends the best tools to build a project, always focused on the best practices. I would always recommend him as part of the team"

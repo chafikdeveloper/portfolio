@@ -27,9 +27,9 @@ const { title, description, tags, cover } = project.data;
   <div class="flex flex-wrap gap-2">
     {
       tags.map((tag: string) => (
-        <small class="px-2 py-1 rounded-full text-xs text-white bg-sky-700">
+        <span class="bg-brand-softer text-fg-brand-strong text-sm font-medium px-1.5 py-0.5 rounded">
           {tag}
-        </small>
+        </span>
       ))
     }
   </div>

@@ -13,14 +13,16 @@ import Footer from "@/components/Footer.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Chafik Chegma | Portfolio</title>
   </head>
-  <body>
+  <body class="flex flex-col min-h-screen">
     <Header />
 
-    <main class="grow justify-center px-8 py-4 mx-auto">
+    <main class="flex-1 justify-center px-8 py-4 mx-auto w-full">
       <slot />
     </main>
 
     <Footer />
+
+    <script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@4.0.0/dist/flowbite.min.js"></script>
   </body>
 </html>
 
