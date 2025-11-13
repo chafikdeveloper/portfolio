@@ -13,12 +13,12 @@ const filteredProjects = projects.slice(0, 3);
 console.log("🚀 ~ filteredProjects:", filteredProjects);
 ---
 
-<Layout>
+<Layout desc="Passionate web developer crafting modern, responsive, and user-friendly websites that bring ideas to life with clean design and efficient code.">
   <Hero />
 
   <LogoWall />
 
-  <div id="project" class="mt-14 md:mt-20">
+  <section id="project" class="px-6 lg:px-10 py-16 lg:py-18 mx-auto max-w-7xl mt-8 md:mt-12">
     <h2 class="text-center font-bold text-3xl">Projects</h2>
     <p class="text-center text-md mt-4">View some of previous work</p>
 
@@ -26,14 +26,14 @@ console.log("🚀 ~ filteredProjects:", filteredProjects);
       {filteredProjects.map((project) => <ProjectCard project={project} />)}
     </div>
 
-    <a href="/project" class="flex justify-center mt-10"
+    <a href="/project" class="flex justify-center mt-16"
       ><button class="px-4 py-2 rounded-md text-white bg-black"
         >View all projects</button
       ></a
     >
-  </div>
+  </section>
 
-  <h2 class="text-center font-bold text-3xl mt-14 md:mt-20">Contact</h2>
+  <h2 class="text-center font-bold text-3xl mt-10 md:mt-16">Contact</h2>
 
   <Contact />
 
