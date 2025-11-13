@@ -9,47 +9,110 @@ const navLinks = [
 ---
 
 <header
-      class="flex items-center justify-between py-4 px-6 sm:px-12 md:px-16 rounded-full my-4 sm:my-6 md:my-8 w-full mx-auto max-w-7xl relative"
+  class="flex items-center justify-between py-4 px-6 sm:px-12 md:px-16 rounded-full my-4 sm:my-6 md:my-8 w-full mx-auto max-w-7xl relative"
+>
+  <h1 class="font-bold text-2xl text-black dark:text-white cursor-pointer">
+    <a href="/">
+      Chafik
+      <span class="text-blue-800">Dev</span>
+    </a>
+  </h1>
+
+  <!-- Hamburger menu icon -->
+  <button
+    id="menu-btn"
+    class="block md:hidden text-black dark:text-white cursor-pointer z-50"
+    aria-label="menu-icon"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-menu-icon lucide-menu"
+      ><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"
+      ></path></svg
     >
-      <h1 class="font-bold text-2xl text-black cursor-pointer">
-        <a href="/">
-          Chafik
-          <span class="text-blue-800">Dev</span>
-        </a>
-      </h1>
+  </button>
 
-      <!-- Hamburger menu icon -->
-      <button
-        id="menu-btn"
-        class="block md:hidden text-black cursor-pointer z-50"
-        aria-label="menu-icon"
+  <nav
+    id="menu"
+    class="hidden md:flex md:gap-8 absolute top-16 right-6 rounded-lg shadow-lg md:static md:shadow-none px-8 md:px-0 transition-all duration-300 ease-in-out z-50 md:z-0 bg-white md:bg-transparent dark:text-black md:dark:text-white md:text-black"
+  >
+    <ul class="flex flex-col md:flex-row md:items-center gap-4 p-4 md:p-0">
+      {
+        navLinks.map((link) => (
+          <li
+            class={`hover:text-blue-600 font-bold pb-0.5 ${currentPath === link.href ? "text-blue-500 border-b-2 border-blue-500" : ""}`}
+          >
+            <a href={link.href}>{link.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <button class="p-3" id="themeToggle" aria-label="Theme mode">
+      <svg
+        class="sun w-5 hidden dark:block"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-sun"
+        ><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path
+          d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path
+          d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path
+          d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path
+          d="m19.07 4.93-1.41 1.41"></path></svg
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-menu-icon lucide-menu"
-          ><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"
-          ></path></svg
-        >
-      </button>
+      <svg
+        class="moon w-5 block dark:hidden"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-moon dark:hidden"
+      >
+        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg
+      >
+    </button>
+  </nav>
+</header>
 
-      <nav
-        id="menu"
-        class="hidden md:block absolute top-16 right-6 rounded-lg shadow-lg md:static md:shadow-none px-8 md:px-0 transition-all duration-300 ease-in-out bg-white z-50 md:z-0"
-      >
-        <ul class="flex flex-col md:flex-row md:items-center gap-4 p-4 md:p-0">
-          {navLinks.map(link => (
-            <li class={`hover:text-blue-600 font-bold pb-0.5 ${currentPath === link.href ? "text-blue-500 border-b-2 border-blue-500" : ""}`}>
-              <a href={link.href}>{link.label}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </header>
+<script is:inline>
+  const themeToggle = document.getElementById("themeToggle");
+  const html = document.documentElement;
+
+  // Load theme from localStorage
+  if (
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    html.classList.add("dark");
+  }
+
+  themeToggle.addEventListener("click", () => {
+    html.classList.toggle("dark");
+    // Save the preference
+    if (html.classList.contains("dark")) {
+      localStorage.theme = "dark";
+    } else {
+      localStorage.theme = "light";
+    }
+  });
+</script>

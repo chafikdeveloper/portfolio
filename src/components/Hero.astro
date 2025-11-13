@@ -4,48 +4,49 @@ import { Image } from "astro:assets";
 const words = ["modern", "minimalistic", "performant", "creative"];
 ---
 
-<section class="relative flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-20 px-6 md:px-16 py-16 md:py-24 mx-auto max-w-6xl">
+<section class="relative flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-20 px-6 md:px-16 py-16 md:py-24 mx-auto max-w-6xl
+                bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-500">
   <!-- Left side -->
   <div class="flex flex-col gap-4 text-center md:text-left">
-    <p class="text-gray-600 text-lg">Hey 👋, I’m</p>
+    <p class="text-gray-600 dark:text-gray-400 text-lg">Hey 👋, I’m</p>
     <h1 class="font-extrabold text-4xl md:text-6xl tracking-tight">
       <span class="bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
         Chafik Chegma
       </span>
     </h1>
-    <h2 class="text-green-600 font-semibold text-xl md:text-2xl mb-2">
+    <h2 class="text-green-600 dark:text-green-400 font-semibold text-xl md:text-2xl mb-2">
       Full-Stack Developer
     </h2>
 
-    <h3 class="text-lg md:text-xl font-medium text-gray-800">
-      Helping people bring their ideas <br /> to life  by creating
-      <span id="word" class="font-semibold text-blue-600 inline-block">{words[0]}</span>
+    <h3 class="text-lg md:text-xl font-medium text-gray-800 dark:text-gray-300">
+      Helping people bring their ideas <br /> to life by creating
+      <span id="word" class="font-semibold text-blue-600 dark:text-blue-400 inline-block">{words[0]}</span>
       websites.
     </h3>
 
     <div class="mt-6 flex flex-wrap justify-center md:justify-start gap-4">
-      <a href="#project" class="px-6 py-3 bg-blue-600 text-white rounded-full shadow-md hover:bg-blue-700 transition">
+      <a href="#project" class="px-6 py-3 bg-blue-600 text-white rounded-full shadow-md hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 transition">
         View Projects
       </a>
-      <a href="#contact" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-full hover:bg-blue-50 transition">
+      <a href="#contact" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-full hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-800 transition">
         Contact Me
       </a>
     </div>
   </div>
 
   <div class="relative group">
-    <div class="absolute inset-0 rounded-full bg-linear-to-r from-blue-500 to-pink-500 blur-3xl opacity-20 group-hover:opacity-40 transition duration-700"></div>
+    <div class="absolute inset-0 rounded-full bg-linear-to-r from-blue-500 to-pink-500 blur-3xl opacity-20 group-hover:opacity-40 dark:opacity-10 dark:group-hover:opacity-25 transition duration-700"></div>
     <Image
       src={'/hero-image.jpg'}
       alt="Chafik profile image"
       width="300"
       height="300"
-      class="relative z-10 rounded-full shadow-xl border-4 border-white/20"
+      class="relative z-10 rounded-full shadow-xl border-4 border-white/20 dark:border-gray-700/40"
     />
   </div>
 
   <!-- Subtle floating particles / background dots (optional aesthetic layer) -->
-  <div class="absolute inset-0 -z-10 bg-linear-to-b from-white via-blue-50 to-white opacity-60"></div>
+  <div class="absolute inset-0 -z-10 bg-linear-to-b from-white via-blue-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 opacity-60 transition-colors duration-500"></div>
 </section>
 
 <script>
