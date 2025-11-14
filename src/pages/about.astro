@@ -3,7 +3,9 @@ import Layout from "@/layouts/Layout.astro";
 import { Image } from "astro:assets";
 ---
 
-<Layout desc="I’m a dedicated web developer who loves turning creative ideas into digital experiences. Discover my journey, skills, and what drives my work.">
+<Layout
+  desc="I’m a dedicated web developer who loves turning creative ideas into digital experiences. Discover my journey, skills, and what drives my work."
+>
   <section
     class="relative flex flex-col-reverse lg:flex-row items-center justify-between gap-12 md:gap-20 px-6 md:px-16 py-16 md:py-24 mx-auto max-w-7xl"
   >
@@ -17,8 +19,10 @@ import { Image } from "astro:assets";
           >Full-stack Web Developer</span
         > passionate about building intuitive digital experiences. I specialize in
         crafting robust backends with <span class="text-blue-500">Laravel</span>
-        and dynamic frontends using modern Frameworks like: <span class="text-pink-500">Vue.js, Nuxt and Astro.js</span> blending
-        performance, functionality, and creativity in every project I take on.
+        and dynamic frontends using modern Frameworks like: <span
+          class="text-pink-500">Vue.js, Nuxt and Astro.js</span
+        > blending performance, functionality, and creativity in every project I
+        take on.
       </p>
       <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
         My journey in web development started from curiosity and grew into a
@@ -48,6 +52,17 @@ import { Image } from "astro:assets";
     </div>
   </section>
 
+  <div class="flex justify-center">
+    <a
+      href="/Resume.pdf"
+      target="_blank"
+      class="inline-flex items-center text-white bg-black dark:text-black dark:bg-white box-border border border-default-medium focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 me-1.5 -ms-0.5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download-icon lucide-download"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>
+      Download Resume
+    </a>
+  </div>
+
   <section class="px-6 lg:px-10 py-16 lg:py-18 mx-auto max-w-7xl">
     <div class="flex flex-col space-y-4 mb-12">
       <h2 class="text-center font-bold text-3xl">My Career</h2>
@@ -74,30 +89,6 @@ import { Image } from "astro:assets";
           >
         </h3>
         <p class="mb-4 text-body">6 Month internship at TiniTec</p>
-        <a
-          href="/public/Resume.pdf"
-          target="_blank"
-          class="inline-flex items-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
-        >
-          <svg
-            class="w-4 h-4 me-1.5 -ms-0.5"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-graduation-cap-icon lucide-graduation-cap"
-            ><path
-              d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"
-            ></path><path d="M22 10v6"></path><path
-              d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg
-          >
-          View Certificate
-        </a>
       </li>
       <li class="mb-10 ms-6">
         <div

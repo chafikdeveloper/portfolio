@@ -3,7 +3,7 @@ title: "Midwink"
 description: "A web-based email platform inspired by Gmail, featuring AI features"
 tags: ["web app", "AI", "Payment"]
 link: ""
-cover: "project-cover.jpg"
+cover: "./project-cover.jpg"
 ---
 
 ## Introduction

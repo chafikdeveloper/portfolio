@@ -3,7 +3,7 @@ title: "SpecBuilder"
 description: "SpecBuilder is a form website for TiniTec's potential clients based on the service they choose"
 tags: ["website", "CRUD"]
 link: ""
-cover: 'project-cover.jpg'
+cover: './project-cover.jpg'
 ---
 
 ## Introduction

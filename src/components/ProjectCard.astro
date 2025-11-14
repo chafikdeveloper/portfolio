@@ -5,35 +5,6 @@ const { project } = Astro.props;
 const { title, description, tags, cover } = project.data;
 ---
 
-<!-- <article
-  class="flex flex-col space-y-2 bg-white px-3 py-2 rounded-md shadow-md"
->
-  <a href=`/project/${project.slug}`>
-    <Image
-      src={cover}
-      alt={title}
-      width={350}
-      height={250}
-      class="object-cover rounded-t-md w-full"
-    />
-  </a>
-
-  <h4 class="font-bold text-lg">{title}</h4>
-
-  <div class="min-h-12">
-    <p class="text-sm font-medium text-gray-600 line-clamp-2">{description}</p>
-  </div>
-
-  <div class="flex flex-wrap gap-2">
-    {
-      tags.map((tag: string) => (
-        <span class="bg-brand-softer text-fg-brand-strong text-sm font-medium px-1.5 py-0.5 rounded">
-          {tag}
-        </span>
-      ))
-    }
-  </div>
-</article> -->
 <article
   class="bg-neutral-primary-soft block max-w-sm p-6 border border-default rounded-base shadow-xs"
 >

@@ -10,7 +10,6 @@ import ProjectCard from "@/components/ProjectCard.astro";
 const projects = await getCollection("projects");
 
 const filteredProjects = projects.slice(0, 3);
-console.log("🚀 ~ filteredProjects:", filteredProjects);
 ---
 
 <Layout desc="Passionate web developer crafting modern, responsive, and user-friendly websites that bring ideas to life with clean design and efficient code.">

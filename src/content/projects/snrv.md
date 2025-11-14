@@ -3,7 +3,7 @@ title: "SNRV"
 description: "a showcase website for SNRV"
 tags: ["website", "CMS", "Admin panel"]
 link: "snrv.dz"
-cover: 'project-cover.jpg'
+cover: './project-cover.jpg'
 ---
 
 ## Introduction

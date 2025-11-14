@@ -3,7 +3,7 @@ title: "Tinitec Admin"
 description: "a simple HR ERP built for TiniTec"
 tags: ["website", "ERP"]
 link: ""
-cover: "project-cover.jpg"
+cover: "./project-cover.jpg"
 ---
 
 ## Introduction
