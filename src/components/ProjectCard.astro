@@ -9,7 +9,7 @@ const { title, description, tags, cover } = project.data;
   class="bg-neutral-primary-soft block max-w-sm p-6 border border-default rounded-base shadow-xs"
 >
   <a href=`/project/${project.slug}`>
-    <Image class="rounded-base" src={cover} alt={title} />
+    <Image class="rounded-base" src={project.data.cover} alt={title} />
   </a>
   <a href=`/project/${project.slug}`>
     <h3 class="mt-6 mb-2 text-2xl font-semibold tracking-tight text-heading">
