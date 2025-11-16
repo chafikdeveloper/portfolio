@@ -14,26 +14,24 @@ const phone = import.meta.env.PHONE;
   class="relative flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-20 px-6 lg:px-10 py-10 lg:py-14 mx-auto max-w-7xl"
 >
   <div>
-    <form
-      name="contact"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-    >
-      <input type="hidden" name="form-name" value="contact" />
-      <p class="hidden">
-        <label>
-          Don't fill this out if you're a human:
-          <input name="bot-field" />
-        </label>
-      </p>
+    <form name="contact" method="POST" action="/api/contact">
       <Card class="flex flex-col pt-4">
         <CardContent class="space-y-4">
           <Label for="email">Email</Label>
-          <Input id="email" name="email" placeholder="type your email" class="mt-2" />
+          <Input
+            id="email"
+            name="email"
+            placeholder="type your email"
+            class="mt-2"
+          />
 
           <Label for="name">Name</Label>
-          <Input id="name" name="name" placeholder="enter your name" class="mt-2" />
+          <Input
+            id="name"
+            name="name"
+            placeholder="enter your name"
+            class="mt-2"
+          />
 
           <Label for="message">Message</Label>
           <Textarea
@@ -101,7 +99,10 @@ const phone = import.meta.env.PHONE;
     <h3 class="font-bold mb-4 mt-8">Connect with me</h3>
     <div class="space-y-4">
       <div class="flex items-center gap-4">
-        <a href="https://linkedin.com/in/chafik-chegma-b783a1226" aria-label="linkedin profile">
+        <a
+          href="https://linkedin.com/in/chafik-chegma-b783a1226"
+          aria-label="linkedin profile"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -121,7 +122,10 @@ const phone = import.meta.env.PHONE;
               r="2"></circle></svg
           >
         </a>
-        <a href="https://github.com/chafikdeveloper" aria-label="github profile">
+        <a
+          href="https://github.com/chafikdeveloper"
+          aria-label="github profile"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -138,7 +142,10 @@ const phone = import.meta.env.PHONE;
             ></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg
           >
         </a>
-        <a href="https://instagram.com/chafik.dev/" aria-label="instagram profile">
+        <a
+          href="https://instagram.com/chafik.dev/"
+          aria-label="instagram profile"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
